@@ -1,0 +1,13 @@
+inherit cmake
+
+
+HOMEPAGE="http://www.gccxml.org/"
+SRC_URI="mirror://debian/pool/main/${PN:0:1}/${PN}/${PN}_${PV}.orig.tar.gz"
+SRC_DIR="${P}.orig"
+
+PATCH_URI="
+	http://patch-tracker.debian.org/patch/series/dl/${PN}/${PV}-2/01_remove-xatexit.diff
+	http://patch-tracker.debian.org/patch/series/dl/${PN}/${PV}-2/02_quote-target-cpu-default.diff
+"
+
+CYGCMAKE_ARGS="-DGCCXML_DOC_DIR=share/doc/${PN}"
