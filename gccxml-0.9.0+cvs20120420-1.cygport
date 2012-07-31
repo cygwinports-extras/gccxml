@@ -1,0 +1,17 @@
+inherit cmake
+
+CATEGORY="Devel"
+SUMMARY="XML output extension to GCC"
+DESCRIPTION="The purpose of the GCC-XML extension is to generate an XML
+description of a C++ program from GCC's internal representation. Since
+XML is easy to parse, other development tools will be able to work with
+C++ programs without the burden of a complicated C++ parser."
+HOMEPAGE="http://www.gccxml.org/"
+SRC_URI="mirror://debian/pool/main/${PN:0:1}/${PN}/${PN}_${PV}.orig.tar.gz"
+SRC_DIR="${P}.orig"
+
+PATCH_URI="
+	http://patch-tracker.debian.org/patch/series/dl/${PN}/${PV}-4/01_remove-xatexit.diff
+"
+
+CYGCMAKE_ARGS="-DGCCXML_DOC_DIR=share/doc/${PN}"
