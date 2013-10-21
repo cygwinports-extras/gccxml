@@ -1,0 +1,29 @@
+--- origsrc/gccxml-0.9.0+git20130511.orig/GCC_XML/KWSys/SystemTools.cxx	2013-05-11 02:24:13.000000000 -0500
++++ src/gccxml-0.9.0+git20130511.orig/GCC_XML/KWSys/SystemTools.cxx	2013-10-21 09:15:16.343451900 -0500
+@@ -78,7 +78,7 @@
+ # undef _WIN32
+ #endif
+ 
+-#ifdef __CYGWIN__
++#if 0 //def __CYGWIN__
+ extern "C" void cygwin_conv_to_win32_path(const char *path, char *win32_path);
+ #endif
+ 
+@@ -891,7 +891,7 @@ bool SystemTools::FileExists(const char*
+     {
+     return false;
+     }
+-#if defined(__CYGWIN__)
++#if 0 // defined(__CYGWIN__)
+   // Convert filename to native windows path if possible.
+   char winpath[MAX_PATH];
+   if(SystemTools::PathCygwinToWin32(filename, winpath))
+@@ -919,7 +919,7 @@ bool SystemTools::FileExists(const char*
+ }
+ 
+ //----------------------------------------------------------------------------
+-#ifdef __CYGWIN__
++#if 0 //def __CYGWIN__
+ bool SystemTools::PathCygwinToWin32(const char *path, char *win32_path)
+ {
+   SystemToolsTranslationMap::iterator i =

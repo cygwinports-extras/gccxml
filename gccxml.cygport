@@ -15,6 +15,8 @@ SRC_DIR="${NAME}-${VERSION}.orig"
 
 PATCH_URI="
 	http://patch-tracker.debian.org/patch/series/dl/${NAME}/${VERSION}-1/01_remove-xatexit.diff
+	0.9.0-gcc-cygwin64.patch
+	0.9.0-kwsys-cygwin.patch
 "
 
 CYGCMAKE_ARGS="-DGCCXML_DOC_DIR=share/doc/${NAME}"
