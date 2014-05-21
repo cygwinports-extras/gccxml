@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="gccxml"
-VERSION=0.9.0+git20130511
+VERSION=0.9.0-20131209
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="XML output extension to GCC"
@@ -10,11 +10,10 @@ description of a C++ program from GCC's internal representation. Since
 XML is easy to parse, other development tools will be able to work with
 C++ programs without the burden of a complicated C++ parser."
 HOMEPAGE="http://www.gccxml.org/"
-SRC_URI="mirror://debian/pool/main/${NAME:0:1}/${NAME}/${NAME}_${VERSION}.orig.tar.gz"
-SRC_DIR="${NAME}-${VERSION}.orig"
-
+git_rev=9a114c0c
+md5sum=7f63f9e2c40349cf7eceeb57ebccf8ee
+SRC_URI="http://pkgs.fedoraproject.org/repo/pkgs/gccxml/gccxml-${VERSION}-${git_rev}.tar.gz/${md5sum}/gccxml-${VERSION}-${git_rev}.tar.gz"
 PATCH_URI="
-	http://patch-tracker.debian.org/patch/series/dl/${NAME}/${VERSION}-1/01_remove-xatexit.diff
 	0.9.0-gcc-cygwin64.patch
 	0.9.0-kwsys-cygwin.patch
 "
